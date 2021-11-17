@@ -1,10 +1,11 @@
-## Portfolio
+## Data Science Portfolio
 
 ---
 
-### Category Name 1 
+### Social Media Ad Campaign Marketing (EDA) - Kaggle
 
-[Project 1 Title](/sample_page)
+
+[Sales Conversion Optimisation using R](/sample_page)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
