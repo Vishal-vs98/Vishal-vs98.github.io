@@ -1,5 +1,5 @@
 title: Vishal Shah
-logo: <img src="images/Rounded dp.png”> # your photo (or logo) here
+logo: "/images/Rounded dp.png?raw=true” # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
   &#128073; Hi, I'm Vishal&#128075; A certified data analyst using R, SQL &#38; Excel&#128515;
   <br>
