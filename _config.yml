@@ -1,11 +1,15 @@
 title: Vishal Shah
 logo: "D:/Internship/Linkedin_Dp2.png?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  Hi, I'm Vishal:wave:a certified data science professional
+  Hi, I'm Vishal<p>&#129409;</p> a certified business analytics and data analyst professional
   <br><br>
-  I provide data driven solutions for business problems
+  I have experience solving business problems using data analytics and machine learning for 6+ projects!<p>&#128526;</p>
+  <br><br>
+  Education<p>&#127891;</p>:I have a Bachelors degree(BSc) in economics and I am currently pursuing Masters(MSc) in supply chain management<p>&#127793;</p>
+  <br><br>
+  Give me data and I shall offer you actionable insights<p>&#128161;</p>
   <br><br>
   <a href="linkedin.com/in/vishalshah98">View My LinkedIn Profile</a> 
   
 theme: jekyll-theme-minimal
-google_analytics: UA-000000-0 # your Google Analytics tracking ID here
+google_analytics: G-Y4G2D492RC # your Google Analytics tracking ID here
