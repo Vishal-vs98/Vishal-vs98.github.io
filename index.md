@@ -6,7 +6,9 @@
 
 
 [Sales Conversion Optimisation using R](/sample_page)
+
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
+[Sales-conversion.md](https://github.com/Vishal-vs98/Vishal-vs98.github.io/files/7582583/Sales-conversion.md)
 
 ---
 [Project 2 Title](/pdf/sample_presentation.pdf)
