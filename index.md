@@ -5,7 +5,7 @@
 ### Social Media Ad Campaign Marketing (EDA) - Kaggle
 
 
-[Sales Conversion Optimisation using R](/_layouts/Sales-conversion.md)
+[Sales Conversion Optimisation using R](https://github.com/Vishal-vs98/Vishal-vs98.github.io/blob/main/_layouts/Sales-conversion.md)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
