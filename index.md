@@ -6,7 +6,7 @@
 
 
 [Sales Conversion Optimisation using R](/Project-work/Sales-conversion.md)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+<img src="/images/thumbnail-project1.png?raw=true width=50"/>
 
 ---
 [Project 2 Title](/pdf/sample_presentation.pdf)
