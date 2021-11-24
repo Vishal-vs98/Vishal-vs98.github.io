@@ -9,15 +9,16 @@ Instagram, WhatsApp, Snapchat, and Youtube, etc.? —I know I cannot.
 We know the significance of social media in our personal lives but where
 does social media stand in the business world?
 
-**Interesting Facts –**
+**Interesting Facts**
 
 As of October 2021, there were 4.55 billion active social media users or
-a whopping 57.6% of the total global population. Facebook has been the
+a whopping 57.6% of the total global population. 
+Facebook has been the
 social media market leader for a very long time now and more than 79% of
 marketing professionals disclosed using paid advertisement on Facebook
 (Hubspot, 2021).
 
-**Task -**
+**Task**
 
 Let’s help XYZ company by analyzing its Facebook advertisement campaign
 data (taken from Kaggle) and offering actionable insights using R to
@@ -78,6 +79,10 @@ consists of 11 variables and 1143 observations.
     ## $ Spent               <dbl> 1.43, 1.82, 0.00, 1.25, 1.29, 0.00, 4.77, 1.27, 1.~
     ## $ Total_Conversion    <int> 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,~
     ## $ Approved_Conversion <int> 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0,~
+    
+**Feature Engineering**
+
+**Step 1 - Converting variable type**
 
 There are two character variables *‘age’* and *‘gender’* in the data.
 Lets keep these columns unchanged for simpler graphical analysis and
@@ -91,6 +96,8 @@ they represent a group of characteristics. The other 2 ID variables
 before converting it, we will be checking whether we should keep them in
 the data for further analysis or not.
 
+**Step 2 - Removing irrelevant variables**
+
 Lets check whether the id columns have any characteristics which could
 help in our analysis or not.
 
@@ -98,8 +105,10 @@ xyz\_campaign\_ID has *3 unique categories* while the other 2 ID
 variables have too many unique values to extract any feature out of it.
 So, we will be *removing* the other 2 ID’s from the data.
 
-Also, lets take a look at the *statistical summary* of the data set and
-also check whether the data has *missing values* to be treated or not.
+**Step 3 - Treating missing values**
+
+Lets take a look at the *statistical summary* of the data set and
+check whether the data has *missing values* to be treated or not.
 
     ##  xyz_campaign_id gender     interest    Impressions          Clicks      
     ##  916 : 54        F:551   16     :140   Min.   :     87   Min.   :  0.00  
@@ -126,11 +135,14 @@ also check whether the data has *missing values* to be treated or not.
     ##  Max.   :47.00  
     ## 
 
+Created and used a function to find na values in each of the variables
+if present.
+
 Luckily there are *no missing values* to be imputed in the data. So,
 Lets do a *preliminary analysis* to look for correlation between
 variables in the data.
 
-![](Sales-conversion_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![HeatMap to show correlation between variables](/images/HeatMap.png)
 
 ***Correlation between variables***
 
@@ -156,13 +168,14 @@ conversion ratios)
 Lets create certain metrics to judge the performance of marketing
 campaigns, The metrics which we will be using are -
 
-1.  *Click through rate* (CTR) = Clicks/Impressions multiplied by 100
+1.  *Click through rate* (CTR) = Clicks/Impressions multiplied by 100                                                                                                             (Number of viewers who ended up clicking on the advertisement)
 2.  *Total Conversion Rate* (TCR) = Total Conversions/Clicks multiplied
-    by 100
+    by 100                                                                                                                                                                         (The percentage of viewers who clicked on the ad eventually made an enquiry about the product)
 3.  *Approved Conversion Rate* (ACR) = Approved Conversions/Clicks
     multiplied by 100
-
-*Task -*
+    (The percentage of enquiries were converted into sale)
+    
+*Task*
 
 *K-Prototype clustering algorithm* would be ideal to find out the
 *customer segments* that the business should target to maximize its
@@ -175,20 +188,38 @@ and we will be plotting the sum of within squares to determine the
 optimum number of clusters.
 
 We can determine the optimum number of clusters for this data set using
-the *elbow method*. In the above graph elbow is formed when *4* clusters
+the *elbow method*. 
+
+![scree plot](/images/qplot0.png)
+
+In the above graph elbow is formed when *4* clusters
 are created, so we will be dividing the data into *4 segments* using
 k-prototype clustering.
 
 The following table shows the cluster prototypes or the characteristics
 for each clusters.
 
+![](/images/cluster-prototype.png)
+
+The above table shows characteristics of each clusters or the modes for
+each variables.
+
 To find out which cluster has the *best performance* lets compare the
 metrics for each cluster.
+
+Lets start with comparing the amount paid to facebook to show advertisement 
+and click through rates for each customer segment.
+
+![Metrics comparison between clusters](/images/spentvsCTR.png)
 
 *Analysis-*
 
 Amount *paid* to Facebook for showing advertisements to *segment 2* is
 the *lowest*.
+
+Now, lets compare the conversion rate between clusters.
+
+![Metrics comparison between clusters](/images/conversion-rate.png)
 
 *Analysis-*
 
@@ -214,22 +245,31 @@ which the data is available to us.
 Lets Compare the *click through rates* of the demographic variables to
 understand the perfect target demographics with bar graphs.
 
-![](Sales-conversion_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+Lets start by understanding the percentage of viewers who clicked on the 
+advertisement for each age group.
+
+![Comparison of CTR between age groups](/images/CTR-Age-Group.png)
 
 *Comparison of Click Through Rates between Age Groups*
 
 In the above bar graph it can be observed that with an increase in Age
 the Click through rate also increases; Age group *30-34* and *45-49*
-have the \*\*lowest\* and the *highest* CTR respectively.
+have the *lowest* and the *highest* CTR respectively.
 
-![](Sales-conversion_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
+Now, Lets compare the percentage of viewers who clicked on the 
+advertisement between male and female audience.
+
+![Comparison of CTR between Genders](/images/CTR-Gender.png)
 
 *Comparison of Click Through Rates between Genders*
 
 In the above bar graph it can be observed that *females* have
 significantly higher Click through rate when compared to males.
 
-![](Sales-conversion_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
+Finally, lets understand the the percentage of viewers who clicked on the 
+advertisement for each interest category.
+
+![Comparison of CTR between interest codes](/images/CTR-Interest-code.png)
 
 *Comparison of Click Through Rates between interest codes*
 
@@ -256,15 +296,15 @@ group* to convert and re-target future social campaigns.
 
 The decision making time of each age group can be analysed by
 understanding the number of clicks each age group takes before making
-enquiries and how many of those clicks are actually converted.
+enquiries and how many of those clicks are eventually converted.
 
-*Task -*
+*Task*
 
 Now we will graphically analyse the age group wise click through rate
 and Conversion rate data together for easy comparison of
 turnaround/decision making time between various age groups.
 
-![](Sales-conversion_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
+![Metrics comparison age group wise](/images/Metrics-Age-Group.png)
 
 *Comparison of Click through rate and conversion rate between age
 groups*
@@ -284,7 +324,8 @@ This Age group has the lowest median click through rate but they make an
 enquiry shortly after watching the advertisement (high relative Total
 Conversion Count). Also, they are approximately twice as fast as all the
 other age groups in making the purchase decision (high relative Approved
-Conversion Count). They can be categorised as ***impulsive buyers*** or
+Conversion Count). 
+They can be categorised as ***impulsive buyers*** or
 the age group with comparatively low turnaround time.
 
 **Age Group ‘45-49’**
@@ -294,7 +335,8 @@ have the highest median click through rate but their total conversion
 count is significantly lower than that of the age group 30-34, Which
 implies that they take more time before making an enquiry even if they
 found the advertisement attractive (they are comparatively more
-cautious). Also, the low relative approved conversion rate indicates
+cautious). 
+Also, the low relative approved conversion rate indicates
 that they take decisions with ***deliberation***, because of which they
 tend to withhold their buying decision many times.
 
@@ -318,7 +360,7 @@ rates* which are a good *indicator* of persuasiveness of a campaign .
 Lets plot a bar graph to compare Click through rates and conversion
 rates for each campaign together.
 
-![](Sales-conversion_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
+![Metrics comparison between campaigns](/images/CR-Campaign.png)
 
 *Analysis -*
 
