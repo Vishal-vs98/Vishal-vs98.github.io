@@ -9,7 +9,7 @@
 * Deployed k-Prototype unsupervised learning model using package clustMixType to create customer segments
 * Identified the attributes of optimal target audience to maximise sales and minimize marketing cost
 * Determined the perfect target demographics to attain maximum clicks for future advertisements
-* Inferred the decision time for each age group to enable the company to re-target future campaigns
+* Inferred the decision making time for each age group to enable the company to re-target future campaigns
 
 [Sales Conversion Optimisation using R](/Project-work/Sales-conversion.md)
 
