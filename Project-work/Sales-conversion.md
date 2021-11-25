@@ -3,8 +3,8 @@ Sales Conversion Optimisation for XYZ using R
 
 **Social Media**
 
-Can you imagine a life without Meta (formerly known as Facebook),
-Instagram, WhatsApp, Snapchat, and Youtube, etc.? —I know I cannot.
+Can you imagine life without Facebook,
+Instagram, WhatsApp, Snapchat, and Youtube, etc.? — I know I cannot.
 
 We know the significance of social media in our personal lives but where
 does social media stand in the business world?
