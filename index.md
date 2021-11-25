@@ -2,16 +2,14 @@
 
 ---
 
-## Unsupervised learning for customer segmentation - Kaggle 
+### Social Media Marketing : Unsupervised Machine Learning Algorithm (kaggle) 
 
 ### Project overview
 
 * Deployed k-Prototype unsupervised learning model using package clustMixType to create customer segments
-* Scree plot or the elbow method was used to determine the optimal number of clusters
 * Identified the attributes of optimal target audience to maximise sales and minimize marketing cost
 * Determined the perfect target demographics to attain maximum clicks for future advertisements
 * Inferred the decision time for each age group to enable the company to re-target future campaigns
-* Analysed the data to find out the most creative campaign
 
 [Sales Conversion Optimisation using R](/Project-work/Sales-conversion.md)
 
